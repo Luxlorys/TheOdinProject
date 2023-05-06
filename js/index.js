@@ -22,26 +22,23 @@ function addNewBook(author, title, pages, isRead = false) {
     books.push(new Book(author, title, pages, isRead))
 }
 
-function displayBooks(books) {
-    const bookList = document.getElementById("book-list")
+function displayBook(book) {
+    const bookList = document.getElementById("book-list");
 
-    books.forEach(book => {
-        const bookItem = document.createElement('li');
+    const bookItem = document.createElement('li');
 
-        bookItem.innerHTML = `
-            <h2>${book.author}</h2>
-            <p>Author: ${book.author}</p>
-            <p>Pages: ${book.pages}</p>
-            <p>Read: ${book.isRead ? 'Yes' : 'No'}</p>
-        `;
+    bookItem.innerHTML = `
+        <h2>${book.author}</h2>
+        <p>Author: ${book.author}</p>
+        <p>Pages: ${book.pages}</p>
+        <p>Read: ${book.isRead ? 'Yes' : 'No'}</p>
+    `;
 
-        bookList.appendChild(bookItem);
-    });
-
-    document.body.appendChild(bookList);
+    bookList.appendChild(bookItem);
 }
 
 document.addEventListener("DOMContentLoaded", function () {
+
     const form = document.getElementById("form-add-book");
     const authorInput = document.getElementById("author");
     const titleInput = document.getElementById("title");
@@ -56,9 +53,10 @@ document.addEventListener("DOMContentLoaded", function () {
         const pages = pagesInput.value;
         const isRead = isReadInput.checked;
 
-        addNewBook(author, title, pages, isRead);
+        const newBook = new Book(author, title, pages, isRead);
+        addNewBook(newBook);
 
-        displayBooks(books);
+        displayBook(newBook);
 
         form.reset();
     });

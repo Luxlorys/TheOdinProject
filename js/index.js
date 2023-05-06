@@ -27,13 +27,6 @@ function displayBook(book) {
 
     const bookItem = document.createElement('li');
 
-    // bookItem.innerHTML = `
-    //     <h2>${book.author}</h2>
-    //     <p>Author: ${book.author}</p>
-    //     <p>Pages: ${book.pages}</p>
-    //     <p>Read: ${book.isRead ? 'Yes' : 'No'}</p>
-    // `;
-
     bookItem.innerHTML = `
         <div class="card" style="width: 18rem;">
             <div class="card-body">
@@ -41,11 +34,18 @@ function displayBook(book) {
                 <h6 class="card-subtitle mb-2 text-body-secondary">${book.pages} pages</h6>
                 <h5 class="card-text">Author: ${book.author}</h5>
                 <p class="card-text">Finished: ${book.isRead ? 'Yes' : 'No'}</p>
+                <button class="btn btn-danger">Delete book</button>
             </div>
         </div>
     `;
 
     bookList.appendChild(bookItem);
+
+    bookItem.addEventListener("click", () => {
+        bookList.removeChild(bookItem);
+        const bookIndex = books.indexOf(book)
+        books.splice(bookIndex, 1);
+    });
 }
 
 document.addEventListener("DOMContentLoaded", function () {

@@ -35,12 +35,31 @@ function displayBooks(books) {
             <p>Read: ${book.isRead ? 'Yes' : 'No'}</p>
         `;
 
-        bookList.appendChild(bookItem)
+        bookList.appendChild(bookItem);
     });
 
     document.body.appendChild(bookList);
 }
 
 document.addEventListener("DOMContentLoaded", function () {
-    
+    const form = document.getElementById("form-add-book");
+    const authorInput = document.getElementById("author");
+    const titleInput = document.getElementById("title");
+    const pagesInput = document.getElementById("pages");
+    const isReadInput = document.getElementById("isRead");
+
+    form.addEventListener("submit", function (event) {
+        event.preventDefault();
+
+        const author = authorInput.value;
+        const title = titleInput.value;
+        const pages = pagesInput.value;
+        const isRead = isReadInput.checked;
+
+        addNewBook(author, title, pages, isRead);
+
+        displayBooks(books);
+
+        form.reset();
+    });
   });

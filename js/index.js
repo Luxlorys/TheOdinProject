@@ -27,11 +27,22 @@ function displayBook(book) {
 
     const bookItem = document.createElement('li');
 
+    // bookItem.innerHTML = `
+    //     <h2>${book.author}</h2>
+    //     <p>Author: ${book.author}</p>
+    //     <p>Pages: ${book.pages}</p>
+    //     <p>Read: ${book.isRead ? 'Yes' : 'No'}</p>
+    // `;
+
     bookItem.innerHTML = `
-        <h2>${book.author}</h2>
-        <p>Author: ${book.author}</p>
-        <p>Pages: ${book.pages}</p>
-        <p>Read: ${book.isRead ? 'Yes' : 'No'}</p>
+        <div class="card" style="width: 18rem;">
+            <div class="card-body">
+                <h4 class="card-title">${book.title}</h5>
+                <h6 class="card-subtitle mb-2 text-body-secondary">${book.pages} pages</h6>
+                <h5 class="card-text">Author: ${book.author}</h5>
+                <p class="card-text">Finished: ${book.isRead ? 'Yes' : 'No'}</p>
+            </div>
+        </div>
     `;
 
     bookList.appendChild(bookItem);

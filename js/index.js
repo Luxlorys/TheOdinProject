@@ -22,15 +22,25 @@ function addNewBook(author, title, pages, isRead = false) {
     books.push(new Book(author, title, pages, isRead))
 }
 
-function showBooks() {
+function displayBooks(books) {
+    const bookList = document.getElementById("book-list")
+
     books.forEach(book => {
-        console.log(`Author: ${book.author}`);
-        console.log(`Title: ${book.title}`);
-        console.log(`Pages: ${book.pages}`);
-        console.log(`Is read? - ${book.isRead}`)
+        const bookItem = document.createElement('li');
+
+        bookItem.innerHTML = `
+            <h2>${book.author}</h2>
+            <p>Author: ${book.author}</p>
+            <p>Pages: ${book.pages}</p>
+            <p>Read: ${book.isRead ? 'Yes' : 'No'}</p>
+        `;
+
+        bookList.appendChild(bookItem)
     });
+
+    document.body.appendChild(bookList);
 }
 
-addNewBook("Dostoevsky", "Idiot", 832);
-addNewBook("Burcev", "shit stuff", 1, true);
-showBooks()
+document.addEventListener("DOMContentLoaded", function () {
+    
+  });

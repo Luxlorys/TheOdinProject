@@ -18,7 +18,7 @@ class Book {
     }
 }
 
-function addNewBook(author, title, pages, isRead = false) {
+function addNewBook(author, title, pages, isRead) {
     books.push(new Book(author, title, pages, isRead))
 }
 
@@ -30,7 +30,7 @@ function displayBook(book) {
     bookItem.innerHTML = `
         <div class="card" style="width: 18rem;">
             <div class="card-body">
-                <h4 class="card-title">${book.title}</h5>
+                <h4 class="card-title">Bo${book.title}</h5>
                 <h6 class="card-subtitle mb-2 text-body-secondary">${book.pages} pages</h6>
                 <h5 class="card-text">Author: ${book.author}</h5>
                 <p class="card-text">Finished: ${book.isRead ? 'Yes' : 'No'}</p>

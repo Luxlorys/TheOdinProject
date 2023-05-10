@@ -2,7 +2,8 @@
 // all win combinations
 
 window.addEventListener('DOMContentLoaded', () => {
-    let board = []
+
+    const cells = document.querySelectorAll('.cell');
 
     let winnerCombo = [
         [0, 1, 2], [3, 4, 5], [6, 7, 8], // rows
@@ -21,7 +22,6 @@ window.addEventListener('DOMContentLoaded', () => {
     const checkWinner = () => {
         for (const combo of winnerCombo) {
             const [a, b, c] = combo;
-            const cells = document.querySelectorAll('.cell');
             const winner = document.getElementById('winner');
 
             if (cells[a].textContent !== '' &&
@@ -66,11 +66,23 @@ window.addEventListener('DOMContentLoaded', () => {
     }
 
     const playTurn = (function() {
-        const cells = document.querySelectorAll('.cell');
-
         cells.forEach(cell => {
             cell.addEventListener('click', handleCellClick);
         }) 
     })(); 
+
+    const gameResset = (function() {
+        const ressetBtn = document.getElementById('game-resset');
+
+        ressetBtn.addEventListener('click', () => {
+            player_x.turn = true;
+            player_o.turn = false;
+
+            cells.forEach(cell => {
+                cell.textContent = '';
+                cell.addEventListener('click', handleCellClick);
+            })
+        });
+    })();
 })
 

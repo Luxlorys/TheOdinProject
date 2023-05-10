@@ -27,14 +27,14 @@ window.addEventListener('DOMContentLoaded', () => {
             if (cells[a].textContent !== '' &&
                 cells[a].textContent === cells[b].textContent &&
                 cells[b].textContent === cells[c].textContent
-                ) {
-                    winner.innerHTML += `The winner is: ${cells[a].textContent} player` 
+            ) {
+                winner.innerHTML += `The winner is: ${cells[a].textContent} player` 
 
-                    cells.forEach(cell => {
-                        cell.removeEventListener('click', handleCellClick);
-                    });
+                cells.forEach(cell => {
+                    cell.removeEventListener('click', handleCellClick);
+                });
 
-                    return;
+                return;
                 // return cells[a].textContent; // Return the winning mark ('x' or 'o')
             }
         }
@@ -70,7 +70,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
         cells.forEach(cell => {
             cell.addEventListener('click', handleCellClick);
-        }) // forEach
-    })(); // playTurn
+        }) 
+    })(); 
 })
 

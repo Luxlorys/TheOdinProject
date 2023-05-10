@@ -40,8 +40,8 @@ td {
 .cell {
     border: 10px rgb(226, 226, 226) solid;
     color: white;
-    width: 1.5em;
-    height: 1.5em;
+    width: 2em;
+    height: 2em;
     font-size: 5rem;
     text-align: center;
     cursor: default;
@@ -63,16 +63,12 @@ table tr td:first-child {
 table tr td:last-child {
     border-right: 0;
 }
+
 td {
     padding: 10px;
     font-size: 60px;
-} */
+} 
 
-.cell{
-    width:100px;
-    height:100px;
-    text-align: center;
-}
 
 .v{
     border-left:1px solid #000;

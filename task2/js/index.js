@@ -73,6 +73,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
     const gameResset = (function() {
         const ressetBtn = document.getElementById('game-resset');
+        const winner = document.getElementById('winner');
 
         ressetBtn.addEventListener('click', () => {
             player_x.turn = true;
@@ -81,6 +82,7 @@ window.addEventListener('DOMContentLoaded', () => {
             cells.forEach(cell => {
                 cell.textContent = '';
                 cell.addEventListener('click', handleCellClick);
+                winner.innerHTML += 'Winner will be here';
             })
         });
     })();

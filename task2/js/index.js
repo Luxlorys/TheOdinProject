@@ -7,7 +7,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
     let winnerCombo = [
         [0, 1, 2], [3, 4, 5], [6, 7, 8], // rows
-        [0, 3, 6], [1, 4, 7], [2, 5, 7], // columns
+        [0, 3, 6], [1, 4, 7], [2, 5, 8], // columns
         [0, 4, 8], [2, 4, 6] // diagonals
     ]
 
@@ -28,7 +28,7 @@ window.addEventListener('DOMContentLoaded', () => {
                 cells[a].textContent === cells[b].textContent &&
                 cells[b].textContent === cells[c].textContent
             ) {
-                winner.innerHTML += `The winner is: ${cells[a].textContent} player` 
+                winner.innerHTML = `The winner is: ${cells[a].textContent} player` 
 
                 cells.forEach(cell => {
                     cell.removeEventListener('click', handleCellClick);
@@ -82,7 +82,7 @@ window.addEventListener('DOMContentLoaded', () => {
             cells.forEach(cell => {
                 cell.textContent = '';
                 cell.addEventListener('click', handleCellClick);
-                winner.innerHTML += 'Winner will be here';
+                winner.innerHTML = 'Winner will be here';
             })
         });
     })();

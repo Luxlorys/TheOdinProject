@@ -1,3 +1,3 @@
-import initialize from './builder';
+import initialize from "./builder";
 
 initialize();

@@ -16,7 +16,17 @@
   \************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ initialize)\n/* harmony export */ });\n/* harmony import */ var _home__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./home */ \"./src/home.js\");\n\n\nfunction initialize() {\n    (0,_home__WEBPACK_IMPORTED_MODULE_0__[\"default\"])();\n};\n\n//# sourceURL=webpack://restaurant-page/./src/builder.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ initialize)\n/* harmony export */ });\n/* harmony import */ var _home__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./home */ \"./src/home.js\");\n/* harmony import */ var _contacts__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./contacts */ \"./src/contacts.js\");\n\n\n\nfunction createHeader() {\n    const header = document.createElement(\"header\");\n    header.classList.add(\"header\");\n  \n    const restaurantName = document.createElement(\"h1\");\n    restaurantName.classList.add(\"restaurant-name\");\n    restaurantName.textContent = \"Mozzafiato\";\n  \n    header.appendChild(restaurantName);\n    header.appendChild(createNav());\n  \n    return header;\n}\n\nfunction createNav() {\n    const nav = document.createElement('nav');\n\n    const homeBtn = document.createElement('button');\n    homeBtn.textContent = 'home';\n    homeBtn.addEventListener('click', () => {\n        (0,_home__WEBPACK_IMPORTED_MODULE_0__[\"default\"])();\n    });\n\n    const contactsBtn = document.createElement('button');\n    contactsBtn.textContent = 'contacts';\n    contactsBtn.addEventListener('click', () => {\n        (0,_contacts__WEBPACK_IMPORTED_MODULE_1__[\"default\"])();\n    });\n\n\n    nav.appendChild(homeBtn);\n    nav.appendChild(contactsBtn);\n\n    \n\n    return nav;\n}\n\nfunction createMain() {\n    const main = document.createElement(\"main\");\n    main.classList.add(\"main\");\n    main.setAttribute(\"id\", \"main\");\n    return main;\n  }\n\nfunction initialize() {\n    const content = document.getElementById('content');\n\n    content.appendChild(createHeader());\n    content.appendChild(createMain());\n    (0,_home__WEBPACK_IMPORTED_MODULE_0__[\"default\"])();\n}\n\n//# sourceURL=webpack://restaurant-page/./src/builder.js?");
+
+/***/ }),
+
+/***/ "./src/contacts.js":
+/*!*************************!*\
+  !*** ./src/contacts.js ***!
+  \*************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ loadContacts)\n/* harmony export */ });\nfunction createContacts() {\n    const contact = document.createElement('div')\n  contact.classList.add('contact')\n\n  const phoneNumber = document.createElement('p')\n  phoneNumber.textContent = '📞 123 456 789'\n\n  const address = document.createElement('p')\n  address.textContent = '🏠 Hollywood Boulevard 42, Los Angeles, USA'\n\n  contact.appendChild(phoneNumber)\n  contact.appendChild(address)\n\n  return contact\n}\n\nfunction loadContacts() {\n    const main = document.getElementById('main');\n    main.textContent = '';\n    main.appendChild(createContacts());\n}\n\n//# sourceURL=webpack://restaurant-page/./src/contacts.js?");
 
 /***/ }),
 
@@ -26,7 +36,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
   \*********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ home)\n/* harmony export */ });\nfunction home() {\n    console.log('home');\n}\n\n//# sourceURL=webpack://restaurant-page/./src/home.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ loadHome)\n/* harmony export */ });\nfunction createHome() {\n    const home = document.createElement('div');\n\n    home.appendChild(paragraph('my text'));\n    home.appendChild(paragraph('my text'));\n    home.appendChild(paragraph('my text'));\n\n    return home;\n}\n\nfunction paragraph(text) {\n    const paragraph = document.createElement('p');\n    paragraph.textContent = text;\n\n    return paragraph;\n}\n\nfunction loadHome() {\n    const main = document.getElementById('main');\n    main.textContent = '';\n    main.appendChild(createHome());\n}\n\n//# sourceURL=webpack://restaurant-page/./src/home.js?");
 
 /***/ }),
 

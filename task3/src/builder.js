@@ -8,8 +8,6 @@ function createHeader() {
     header.classList.add("header");
   
     const restaurantName = document.createElement("h1");
-    restaurantName.classList.add("restaurant-name");
-    restaurantName.textContent = "Luxlorys restaurant";
   
     header.appendChild(restaurantName);
     header.appendChild(createNav());

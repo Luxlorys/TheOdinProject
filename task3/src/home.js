@@ -1,22 +1,20 @@
 function createHome() {
     const home = document.createElement('div');
 
-    home.appendChild(paragraph('my text'));
-    home.appendChild(paragraph('my text'));
-    home.appendChild(paragraph('my text'));
+    const intro = document.createElement('div');
+
+    const title = document.createElement('h1');
+    title.textContent = 'intro';
+
+    title.classList.add('title');
+    intro.appendChild(title);
+
+    home.appendChild(intro);
 
     return home;
 }
 
-function paragraph(text) {
-    const paragraph = document.createElement('p');
-    paragraph.textContent = text;
-
-    return paragraph;
-}
-
 export default function loadHome() {
     const main = document.getElementById('main');
-    main.textContent = '';
     main.appendChild(createHome());
 }

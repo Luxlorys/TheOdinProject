@@ -65,5 +65,6 @@ export default function initialize() {
 
     content.appendChild(createHeader());
     content.appendChild(createMain());
+    console.log(123);
     loadHome();
 }

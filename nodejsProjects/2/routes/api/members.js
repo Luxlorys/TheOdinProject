@@ -37,4 +37,24 @@ router.post('/create', (req, res) => {
 })
 
 
+// update member
+router.put('/:id', (req, res) => {
+    const found = members.some(member => member.id === parseInt(req.params.id))
+
+    if (found) {
+        const updMember = req.body;
+        members.forEach(member => {
+            if(member.id === parseInt(req.params.id)) {
+                member.name = updMember.name ? updMember.name : member.name;
+                member.age = updMember.age ? updMember.age : member.age;
+                member.sex = updMember.sex ? updMember.sex : member.sex;
+
+                res.json({ msg: "member was updated", member: member })
+            }
+        })
+    } else {
+        res.status(400).json({ msg: `no members with ${req.params.id} id` });
+    }
+});
+
 module.exports = router;
